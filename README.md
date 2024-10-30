@@ -57,3 +57,27 @@ MultipleJGitEnvironmentRepository : Fetched for remote main and found 1 updates
 NativeEnvironmentRepository  : Adding property source: Config resource 'file [/var/folders/rt/54tz9m_x72781wptbr0nhfc80000gn/T/config-repo-10948513823158205996/hello-config-file/hcc/prod/hcc-prod.yml]' via location 'file:/var/folders/rt/54tz9m_x72781wptbr0nhfc80000gn/T/config-repo-10948513823158205996/hello-config-file/hcc/prod/'
 NativeEnvironmentRepository  : Adding property source: Config resource 'file [/var/folders/rt/54tz9m_x72781wptbr0nhfc80000gn/T/config-repo-10948513823158205996/hello-config-file/hcc/prod/hcc-prod.yml]' via location 'file:/var/folders/rt/54tz9m_x72781wptbr0nhfc80000gn/T/config-repo-10948513823158205996/hello-config-file/hcc/prod/'
 ```
+
+## Spring cloud config
+
+### 특징 요약
+
+- spring.config.import 를 사용해서 외부 설정을 가져올 수 있다.
+- spring actuator 기능인 refresh 로 컨텍스트를 다시 로드할 수 있다. 
+- `@ConfigurationProperties`또는 `@Value` 설정된 인스턴스는 refresh 하려면 빈으로 등록해야 하니 주의한다.
+
+```log
+ConfigServerConfigDataLoader   : Located environment: name=hcc, profiles=[test], label=null, version=05e04901ec3ba7c25f6bf810742a5568bcfcd1e8, state=null
+RefreshEndpoint       : Refreshed keys : [config.client.version, refresh-client.message]
+```
+
+### 갱신과 관련해서
+
+`@ConfigurationProperties`또는 `@Value`로 지정된 인스턴스를 갱신하려면 `@RefreshScope` 를 사용해야 한다.
+그러나 인스턴스를 삭제하고 다시 생성해야 하므로 정상적으로 동작하지 않는다.
+그래서 `@ConfigurationProperties`로 지정된 인스턴스를 빈으로 등록하고 교체해야 한다.
+
+- https://gist.github.com/dsyer/a43fe5f74427b371519af68c5c4904c7
+- https://www.baeldung.com/spring-reloading-properties
+
+
