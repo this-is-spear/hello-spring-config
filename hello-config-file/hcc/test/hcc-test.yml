@@ -3,6 +3,6 @@ application:
   message: Hello, Develop Config Client!
 
 client:
-  message: Hello, Prod Config Client!
+  message: Hello, Prod Config Client! (Refreshed)
 refresh-client:
-  message: Hello, Prod Config Client!
+  message: Hello, Prod Config Client! (Refreshed)
