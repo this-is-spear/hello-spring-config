@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: https://github.com/this-is-spear/hello-spring-config
-          search-paths: hello-config-file
+          search-paths: hello-config-file/**
           default-label: main
 server:
   port: 8888
