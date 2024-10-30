@@ -5,4 +5,4 @@ application:
 client:
   message: Hello, Test Config Client! (Refreshed)
 refresh-client:
-  message: Hello, Test Config Client! (Refreshed)
+  message: Hello, Test Config Client!-Refreshed
