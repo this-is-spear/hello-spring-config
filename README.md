@@ -48,3 +48,12 @@ GET /{label}/{application}-{profile}.properties
   ]
 }
 ```
+
+변경되면 다음 로그가 출력된다.
+간단하게 바라보는 저장소 파일을 읽어 파일을 관리하고 있다.
+
+```log
+MultipleJGitEnvironmentRepository : Fetched for remote main and found 1 updates
+NativeEnvironmentRepository  : Adding property source: Config resource 'file [/var/folders/rt/54tz9m_x72781wptbr0nhfc80000gn/T/config-repo-10948513823158205996/hello-config-file/hcc/prod/hcc-prod.yml]' via location 'file:/var/folders/rt/54tz9m_x72781wptbr0nhfc80000gn/T/config-repo-10948513823158205996/hello-config-file/hcc/prod/'
+NativeEnvironmentRepository  : Adding property source: Config resource 'file [/var/folders/rt/54tz9m_x72781wptbr0nhfc80000gn/T/config-repo-10948513823158205996/hello-config-file/hcc/prod/hcc-prod.yml]' via location 'file:/var/folders/rt/54tz9m_x72781wptbr0nhfc80000gn/T/config-repo-10948513823158205996/hello-config-file/hcc/prod/'
+```
