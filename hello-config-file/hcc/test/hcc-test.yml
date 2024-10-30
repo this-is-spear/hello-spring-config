@@ -1,8 +1,8 @@
 application:
   name: hello-config-client
-  message: Hello, Develop Config Client!
+  message: Hello, Test Config Client!
 
 client:
-  message: Hello, Prod Config Client! (Refreshed)
+  message: Hello, Test Config Client! (Refreshed)
 refresh-client:
-  message: Hello, Prod Config Client! (Refreshed)
+  message: Hello, Test Config Client! (Refreshed)
