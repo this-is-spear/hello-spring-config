@@ -3,6 +3,6 @@ application:
   message: Hello, Test Config Client!
 
 client:
-  message: Hello, Test Config Client!
+  message: Hello, Test Config Client!(Refreshed)
 refresh-client:
-  message: Hello, Test Config Client!
+  message: Hello, Test Config Client!(Refreshed)
