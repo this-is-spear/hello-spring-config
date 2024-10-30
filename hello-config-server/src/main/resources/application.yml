@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: hello-config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/this-is-spear/hello-spring-config
+          search-paths: hello-config-file
+          default-label: main

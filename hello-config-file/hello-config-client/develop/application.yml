@@ -1,0 +1,3 @@
+application:
+  name: hello-config-client
+  message: Hello, Develop Config Client!
