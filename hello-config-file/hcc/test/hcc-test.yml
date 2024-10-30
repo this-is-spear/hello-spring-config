@@ -1,3 +1,8 @@
 application:
   name: hello-config-client
   message: Hello, Develop Config Client!
+
+client:
+  message: Hello, Prod Config Client!
+refresh-client:
+  message: Hello, Prod Config Client!
