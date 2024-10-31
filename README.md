@@ -119,4 +119,23 @@ spring.config.import 를 사용해서 `aws-parameterstore:/spring/config/` 값�
 yml 파일처럼 관리하지 못하는게 단점처럼 보인다.
 환경 변수마다 파편화가 안되게 설정하려면 어떤 방식이 좋을까?
 
+`Secrets Manager`는 `Parameter Store`와 달리 json 데이터로 값을 저장한다. 그래서 yml 파일처럼 관리할 수 있다.
+
+
+`Parameter Store`는 각 이름마다 path를 지정해야 했지만 `Secrets Manager`는 이름이 곧 path다.
+
+<img width="1794" alt="스크린샷 2024-10-31 오전 9 48 46" src="https://github.com/user-attachments/assets/48715f52-32ec-425c-8e52-556b79494107">
+
+이름에 맞게 설정해야 하는데 `/` 기호도 신경써서 세팅해야한다.
+
+```json
+spring:
+  config:
+    import: aws-secretsmanager:spring/config
+```
+
+키-값은 아래 다음처럼 관리한다.
+
+<img width="1789" alt="스크린샷 2024-10-31 오전 9 49 15" src="https://github.com/user-attachments/assets/07b7f7ab-86ad-4704-b4d4-d7a92b82b219">
+
 

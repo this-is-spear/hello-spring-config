@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/hello-aws-parameter-store-config" />
+    <file type="web" url="file://$PROJECT_DIR$/hello-aws-secret-manager-config" />
     <file type="web" url="file://$PROJECT_DIR$/hello-config-client" />
     <file type="web" url="file://$PROJECT_DIR$/hello-config-server" />
   </component>

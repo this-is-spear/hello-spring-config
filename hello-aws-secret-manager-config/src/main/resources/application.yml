@@ -1,0 +1,23 @@
+
+spring:
+  cloud:
+    aws:
+      credentials:
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
+      secretsmanager:
+        region: ap-northeast-2
+        reload:
+          strategy: restart_context
+          period: 10s
+  config:
+    import: aws-secretsmanager:spring/config
+
+management:
+  endpoint:
+    restart:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: restart
