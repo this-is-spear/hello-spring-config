@@ -1,4 +1,4 @@
-# 세줄 요약
+## 세줄 요약
 
 - `@ConfigurationProperties`또는 `@Value`로 지정된 인스턴스를 갱신하려면 `@RefreshScope` 사용해야 하는데 빈으로 등록되고 있어 proxy 가 가능해야 한다.
 - `Secrets Manager`와 `Parameter Store`는 reload 가 자동으로 진행된다는 점이다. 또한 reload 할 때 refresh, restart_context 정책을 적용할 수 있다.
@@ -105,6 +105,8 @@ RefreshEndpoint       : Refreshed keys : [config.client.version, refresh-client.
 
 물론 비용차이도 존재한다. `Secrets Manager`는 조회마다 비용이 추가된다.
 
+### Parameter Store Integration
+
 `Parameter Store` 동작먼저 살펴보겠다.
 
 - refresh strategy 정책으로 파라미터를 변경할 수 있다.
@@ -135,6 +137,7 @@ yml 파일처럼 관리하지 못하는게 단점처럼 보인다.
 
 `Secrets Manager`는 `Parameter Store`와 달리 json 데이터로 값을 저장한다. 그래서 yml 파일처럼 관리할 수 있다.
 
+### Secrets Manager Integration
 
 `Parameter Store`는 각 이름마다 path를 지정해야 했지만 `Secrets Manager`는 이름이 곧 path다.
 
