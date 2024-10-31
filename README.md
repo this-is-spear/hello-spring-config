@@ -1,3 +1,9 @@
+# 세줄 요약
+
+- `@ConfigurationProperties`또는 `@Value`로 지정된 인스턴스를 갱신하려면 `@RefreshScope` 사용해야 하는데 빈으로 등록되고 있어 proxy 가 가능해야 한다.
+- `Secrets Manager`와 `Parameter Store`는 reload 가 자동으로 진행된다는 점이다. 또한 reload 할 때 refresh, restart_context 정책을 적용할 수 있다.
+- 클라우드 환경에 종속적이지 않으려고 spring cloud 시스템을 쓰는데 spring cloud aws 는 종속적이다. 그럼에도 편하다.
+
 ## Spring cloud config
 
 Spring Cloud Config는 분산 시스템에서 외부화된 구성에 대한 서버 측 및 클라이언트 측 지원을 제공한다.
@@ -116,6 +122,14 @@ spring.config.import 를 사용해서 `aws-parameterstore:/spring/config/` 값�
 
 <img width="1787" alt="스크린샷 2024-10-31 오전 9 04 41" src="https://github.com/user-attachments/assets/1dc5b39c-3a33-4804-996b-0cfcb0d27553">
 
+이렇게 설정해야 한다. 뒤에 / 꼭 붙인다.
+
+```yaml
+spring:
+  config:
+    import: aws-parameterstore:/spring/config/
+```
+
 yml 파일처럼 관리하지 못하는게 단점처럼 보인다.
 환경 변수마다 파편화가 안되게 설정하려면 어떤 방식이 좋을까?
 
@@ -128,7 +142,7 @@ yml 파일처럼 관리하지 못하는게 단점처럼 보인다.
 
 이름에 맞게 설정해야 하는데 `/` 기호도 신경써서 세팅해야한다.
 
-```json
+```yaml
 spring:
   config:
     import: aws-secretsmanager:spring/config
@@ -137,5 +151,3 @@ spring:
 키-값은 아래 다음처럼 관리한다.
 
 <img width="1789" alt="스크린샷 2024-10-31 오전 9 49 15" src="https://github.com/user-attachments/assets/07b7f7ab-86ad-4704-b4d4-d7a92b82b219">
-
-
