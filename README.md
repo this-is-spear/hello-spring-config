@@ -1,4 +1,8 @@
-## 세줄 요약
+## 개인적인 생각
+
+> `Parameter Store`는 그룹핑 기능을 제공하지 않아서 관리가 어렵다. `Secrets Manager`는 그룹핑 기능을 제공해서 관리가 편하다 반면 비용이 많이 든다. `Secrets Manager` 사용하돼 그룹을 넓게 잡아 비용을 줄이는 방식이 현명하다.
+
+## 기술 세 줄 요약
 
 - `@ConfigurationProperties`또는 `@Value`로 지정된 인스턴스를 갱신하려면 `@RefreshScope` 사용해야 하는데 빈으로 등록되고 있어 proxy 가 가능해야 한다.
 - `Secrets Manager`와 `Parameter Store`는 reload 가 자동으로 진행된다는 점이다. 또한 reload 할 때 refresh, restart_context 정책을 적용할 수 있다.
